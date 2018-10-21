@@ -9,7 +9,7 @@ CI_BRANCH ?= v1
 # Deployment
 HELM_RELEASE = travis-helm-deploy-test
 HELM_CHART = bblfshd
-HELM_ARGS = "--repo https://src-d.github.io/charts/ --dry-run --debug"
+HELM_ARGS = --repo https://src-d.github.io/charts/ --dry-run --debug
 
 MAKEFILE := $(CI_PATH)/Makefile.main
 $(MAKEFILE):
