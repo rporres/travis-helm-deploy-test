@@ -1,0 +1,9 @@
+language: bash
+
+before_install:
+  - make install-helm
+
+deploy:
+  - make helm-deploy
+  on:
+    tags: true
