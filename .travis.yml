@@ -3,7 +3,11 @@ language: bash
 before_install:
   - make install-helm
 
-deploy:
-  - make helm-deploy
-  on:
-    tags: true
+stages:
+  - name: deploy
+    if: branch = master AND type IN (push)
+
+jobs:
+  include:
+    - stage: deploy
+      script: make helm-deploy
